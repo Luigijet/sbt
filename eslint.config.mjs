@@ -10,6 +10,16 @@ import jsxA11y from "eslint-plugin-jsx-a11y";
 import prettier from "eslint-plugin-prettier";
 
 export default [
+  {
+    ignores: [
+      ".next/**",
+      "node_modules/**",
+      "dist/**",
+      "build/**",
+      "out/**",
+      "coverage/**",
+    ],
+  },
   js.configs.recommended,
   ...tseslint.configs.recommended,
 

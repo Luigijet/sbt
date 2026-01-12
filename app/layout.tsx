@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import "./globals.css";
 
+import "./globals.css";
+import { futuraLT } from "./fonts/futura";
+import { cormorant } from "./fonts/google";
+import Nav from "./components/ui/nav";
+import { avenirLT } from "./fonts/avenir";
+import Footer from "./components/ui/footer";
 
 export const metadata: Metadata = {
   title: {
@@ -19,8 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
+    <html
+      lang="en"
+      className={`${futuraLT.variable} ${cormorant.variable} ${avenirLT.variable}`}
+    >
+      <body className="overflow-x-hidden">
         {/* Organization JSON-LD */}
         <Script
           id="organization-jsonld"
@@ -36,7 +44,9 @@ export default function RootLayout({
             }),
           }}
         />
-        <main>{children}</main>
+        <Nav />
+        <main className="mt-20">{children}</main>
+        <Footer />
       </body>
     </html>
   );
