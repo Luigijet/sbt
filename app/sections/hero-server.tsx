@@ -1,25 +1,13 @@
-"use client";
-
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { RefObject } from "react";
 
-export default function Hero() {
-  const bgRef = useRef<HTMLDivElement>(null);
+type Props = {
+  bgRef: RefObject<HTMLDivElement | null>;
+};
 
-  useEffect(() => {
-    const onScroll = () => {
-      if (!bgRef.current) return;
-      const offset = window.scrollY * 0.25;
-
-      bgRef.current.style.transform = `translate3d(0, ${offset}px, 0)`;
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
+export default function HeroServer({ bgRef }: Props) {
   return (
-    <section className="relative min-h-[75dvh] overflow-hidden flex items-center justify-center">
+    <section className="relative min-h-screen 4xl:min-h-[75dvh] overflow-hidden flex items-center justify-center">
       {/* PARALLAX BACKGROUND */}
       <div
         ref={bgRef}
@@ -35,11 +23,9 @@ export default function Hero() {
         />
       </div>
 
-      {/* OVERLAY */}
       <div className="absolute inset-0 bg-[#32302f]/70" />
 
-      {/* CONTENT */}
-      <div className="relative z-10 flex flex-col items-center gap-3 px-4 text-center max-w-4xl">
+      <div className="relative z-10 flex flex-col items-center gap-3 px-4 text-center max-w-4xl w-full mr-95">
         <Image
           src="/logo/sbt-logo.webp"
           alt="SBT Energy Therapy logo"
