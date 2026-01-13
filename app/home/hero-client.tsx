@@ -10,7 +10,7 @@ export default function HeroClient() {
   useEffect(() => {
     const onScroll = () => {
       if (!bgRef.current) return;
-      bgRef.current.style.transform = `translate3d(0, ${window.scrollY * 0.25}px, 0)`;
+      bgRef.current.style.transform = `translate3d(0, ${window.scrollY * 0.5}px, 0)`;
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });

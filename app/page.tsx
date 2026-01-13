@@ -1,8 +1,12 @@
 import Script from "next/script";
 
-import HealingTypes from "./sections/healing-types";
-import { HEALING_TYPES } from "./data/healing-types";
-import HeroClient from "./sections/hero-client";
+import HealingTypes from "./home/healing-types";
+import { HEALING_TYPES } from "./data/static-data";
+import HeroClient from "./home/hero-client";
+import GetStarted from "./home/get-started";
+import Testimonials from "./home/testimonials";
+import Background from "./home/background";
+import Healers from "./home/healers";
 
 export default function HomePage() {
   return (
@@ -40,6 +44,10 @@ export default function HomePage() {
 
       <HeroClient />
       <HealingTypes />
+      <GetStarted />
+      <Testimonials />
+      <Background />
+      <Healers />
     </>
   );
 }

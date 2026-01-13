@@ -1,15 +1,15 @@
 import Image from "next/image";
 
-import { HEALING_TYPES } from "../data/healing-types";
+import { HEALING_TYPES } from "../data/static-data";
 
 export default function HealingTypes() {
   return (
-    <section className="relative flex flex-col items-center gap-4 py-22 px-6 text-center">
+    <section className="relative flex flex-col items-center gap-4 py-22 px-6 text-center bg-accent/30">
       <h2 className="font-heading font-semibold text-4xl">
         What is Your Pain Costing You?
       </h2>
 
-      <p className="text-xl leading-7 max-w-2xl">
+      <p className="text-lg leading-7 max-w-2xl">
         How much more will you spend doing things the old way? It has cost many
         their relationships, jobs, hope, time, energy and more.
       </p>

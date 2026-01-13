@@ -7,7 +7,10 @@ type Props = {
 
 export default function HeroServer({ bgRef }: Props) {
   return (
-    <section className="relative min-h-screen 4xl:min-h-[75dvh] overflow-hidden flex items-center justify-center">
+    <section
+      id="hero"
+      className="relative min-h-screen 2xl:min-h-[75dvh] overflow-hidden flex items-center justify-center"
+    >
       {/* PARALLAX BACKGROUND */}
       <div
         ref={bgRef}

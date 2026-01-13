@@ -4,7 +4,6 @@
   /* Brand */
   --color-primary: #ae7d17;
   --color-primary-hover: #74530f;
-  --color-secondary: #9333ea;
 
   /* Status */
   --color-success: #22c55e;
@@ -24,6 +23,7 @@
   --color-bg-card: #f9fafb;
   --color-bg-muted: #f3f4f6;
   --color-bg-nav: #333130;
+  --color-accent: #f2ece4;
 
   /* Border */
   --color-border-default: #78736f;
@@ -33,9 +33,11 @@
   /* Background */
   --color-background: var(--color-bg-page);
   --color-nav: var(--color-bg-nav);
+  --color-accent: var(--color-accent);
 
   /* Brand */
   --color-primary: var(--color-primary);
+  --color-secondary: #606b4d;
 
   /* Text */
   --color-foreground: var(--color-text-primary);
@@ -79,6 +81,19 @@
 
     &:hover {
       background-color: var(--color-primary-hover);
+    }
+  }
+
+  .btn--secondary {
+    background: #3d452f url("/button-overlay.png") repeat-x 50% 50%;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 4px;
+    padding: 8px 20px;
+
+    &:hover {
+      background-color: var(--color-secondary);
     }
   }
 
