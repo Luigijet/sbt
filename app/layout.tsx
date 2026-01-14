@@ -15,7 +15,46 @@ export const metadata: Metadata = {
   },
   description:
     "Connect with certified energy healers and transform your physical, emotional, and spiritual wellbeing.",
-  metadataBase: new URL("https://www.sbtenergytherapy.com"),
+  metadataBase: new URL("https://sbthealer.netlify.app"),
+
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    title: "SBT Energy Therapy",
+    description:
+      "Connect with certified energy healers and transform your physical, emotional, and spiritual wellbeing.",
+    url: "https://sbthealer.netlify.app",
+    siteName: "SBT Energy Therapy",
+    images: [
+      {
+        url: "/logo/sbt-app-logo.webp",
+        width: 1200, // logical size for preview
+        height: 630,
+        alt: "SBT Energy Therapy Logo",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/logo/sbt-app-logo.webp"],
+  },
 };
 
 export default function RootLayout({

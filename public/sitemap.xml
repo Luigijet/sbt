@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.sbtenergytherapy.com/</loc></url>
-  <url><loc>https://www.sbtenergytherapy.com/our-healers</loc></url>
-  <url><loc>https://www.sbtenergytherapy.com/retreats</loc></url>
-  <url><loc>https://www.sbtenergytherapy.com/free-training-videos</loc></url>
-  <url><loc>https://www.sbtenergytherapy.com/contact</loc></url>
+  <url><loc>https://sbthealer.netlify.app/</loc></url>
 </urlset>
