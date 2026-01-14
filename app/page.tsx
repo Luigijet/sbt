@@ -7,6 +7,8 @@ import GetStarted from "./home/get-started";
 import Testimonials from "./home/testimonials";
 import Background from "./home/background";
 import Healers from "./home/healers";
+import Retreats from "./home/retreats";
+import Advertise from "./home/advertise";
 
 export default function HomePage() {
   return (
@@ -48,6 +50,8 @@ export default function HomePage() {
       <Testimonials />
       <Background />
       <Healers />
+      <Retreats />
+      <Advertise />
     </>
   );
 }

@@ -5,7 +5,10 @@ import { GET_STARTED } from "../data/static-data";
 
 export default function GetStarted() {
   return (
-    <section className="flex min-h-[70dvh]">
+    <section
+      aria-labelledby="get-started-heading"
+      className="flex min-h-[70dvh]"
+    >
       <figure className="flex-1 relative flex items-end justify-end">
         <div className="absolute inset-0">
           <Image
@@ -18,23 +21,32 @@ export default function GetStarted() {
             className="object-cover w-full h-full"
           />
         </div>
-        <div className="relative z-10 text-white space-y-2 py-25 px-20">
-          <h2 className="font-heading font-bold text-5xl">Get Started!</h2>
+        <figcaption className="relative z-10 text-white space-y-2 py-25 px-20">
+          <h2
+            id="get-started-heading"
+            className="font-heading font-bold text-5xl"
+          >
+            Get Started!
+          </h2>
           <p className="leading-6 text-lg max-w-sm">
             Our Network of Healers™ asks your subconscious the underlying cause
             of the energy imbalance you suffer from, getting to the core now –
             and ending your pain.
           </p>
-        </div>
+        </figcaption>
       </figure>
 
       <div className="flex-1 flex flex-col gap-6 justify-center items-center">
-        <ol className="max-w-md space-y-8">
+        <p id="get-started-desc" className="sr-only">
+          Three steps to match with an energy healer.
+        </p>
+        <ol aria-describedby="get-started-desc" className="max-w-md space-y-8">
           {GET_STARTED.map((item, idx) => (
             <li key={idx} className="flex gap-4">
               <Image
                 src={item.img}
-                alt={item.title}
+                alt=""
+                aria-hidden="true"
                 loading="lazy"
                 width={80}
                 height={80}

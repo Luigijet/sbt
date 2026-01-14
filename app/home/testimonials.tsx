@@ -19,25 +19,44 @@ export default function Testimonials() {
   }, [total]);
 
   return (
-    <section className="flex flex-col gap-4 justify-center items-center py-20 px-6 bg-accent">
+    <section
+      aria-labelledby="testimonials-heading"
+      className="flex flex-col gap-4 justify-center items-center py-20 px-6 bg-accent"
+    >
       <Image
         src="/logo/sbt-black.webp"
-        alt="SBT Energy Therapy logo Black"
+        alt=""
+        aria-hidden="true"
         width={80}
         height={80}
         className="object-contain w-12 h-12"
       />
-      <h2 className="text-3xl md:text-4xl font-semibold font-heading">
+      <h2
+        id="testimonials-heading"
+        className="text-3xl md:text-4xl font-semibold font-heading"
+      >
         What Clients Say:
       </h2>
 
-      <div className="max-w-3xl text-center w-full">
+      <p id="testimonials-desc" className="sr-only">
+        A rotating carousel of client testimonials. Use the navigation buttons
+        to change testimonials.
+      </p>
+
+      <div
+        role="region"
+        aria-roledescription="carousel"
+        aria-describedby="testimonials-desc"
+        className="max-w-3xl text-center w-full"
+      >
         {/* Fade container */}
-        <div className="relative min-h-[220px]">
+        <div aria-live="polite" className="relative min-h-55">
           {TESTIMONIALS.map((item, i) => (
             <article
               key={i}
               aria-hidden={i !== index}
+              aria-roledescription="slide"
+              aria-label={`Testimonial ${i + 1} of ${total}`}
               className={`absolute inset-0 px-6 transition-opacity duration-700 ease-in-out ${
                 index === i
                   ? "opacity-100 pointer-events-auto"
@@ -59,6 +78,7 @@ export default function Testimonials() {
           {TESTIMONIALS.map((_, i) => (
             <button
               key={i}
+              type="button"
               onClick={() => setIndex(i)}
               aria-label={`Go to testimonial ${i + 1}`}
               aria-current={index === i}

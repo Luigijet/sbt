@@ -9,11 +9,13 @@ export default function HeroServer({ bgRef }: Props) {
   return (
     <section
       id="hero"
+      aria-labelledby="hero-heading"
       className="relative min-h-screen 2xl:min-h-[75dvh] overflow-hidden flex items-center justify-center"
     >
       {/* PARALLAX BACKGROUND */}
       <div
         ref={bgRef}
+        aria-hidden="true"
         className="absolute left-0 top-[-15%] w-full h-[130%] will-change-transform"
       >
         <Image
@@ -26,7 +28,7 @@ export default function HeroServer({ bgRef }: Props) {
         />
       </div>
 
-      <div className="absolute inset-0 bg-[#32302f]/70" />
+      <div aria-hidden="true" className="absolute inset-0 bg-[#32302f]/70" />
 
       <div className="relative z-10 flex flex-col items-center gap-3 px-4 text-center max-w-4xl w-full mr-95">
         <Image
@@ -36,19 +38,32 @@ export default function HeroServer({ bgRef }: Props) {
           height={200}
         />
 
-        <p className="text-white text-lg tracking-widest">
+        <p
+          className="text-white text-lg tracking-widest"
+          aria-label="Network of healers"
+        >
           - NETWORK OF HEALERS™ -
         </p>
 
-        <h1 className="text-white font-bold font-heading text-4xl">
+        <h1
+          id="hero-heading"
+          className="text-white font-bold font-heading text-4xl"
+        >
           Which Healer is Right for You?
         </h1>
 
-        <button className="btn--primary px-8 text-lg mt-6">
-          Match with an Energy Healer
-        </button>
+        <p className="sr-only">
+          SBT Energy Therapy® connects you with certified energy healers
+          worldwide.
+        </p>
 
-        <button className="btn--underline mt-2">Pricing?</button>
+        <a className="btn--primary px-8 text-lg mt-6">
+          Match with an Energy Healer
+        </a>
+
+        <button className="btn--underline mt-2" aria-label="View pricing plans">
+          Pricing?
+        </button>
       </div>
     </section>
   );

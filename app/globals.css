@@ -75,7 +75,7 @@
     background: var(--color-primary) url("/button-overlay.png") repeat-x 50% 50%;
     color: white;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 16px;
     box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 4px;
     padding: 8px 20px;
 
@@ -88,7 +88,7 @@
     background: #3d452f url("/button-overlay.png") repeat-x 50% 50%;
     color: white;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 16px;
     box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 4px;
     padding: 8px 20px;
 
@@ -103,6 +103,17 @@
     text-decoration: underline;
     border: none;
     color: white;
+
+    &:hover {
+      color: var(--color-text-light);
+    }
+  }
+
+  .btn--underline2 {
+    font-size: 16px;
+    text-decoration: underline;
+    border: none;
+    color: #aba7a4;
 
     &:hover {
       color: var(--color-text-light);

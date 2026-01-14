@@ -3,7 +3,10 @@ import Link from "next/link";
 
 export default function Background() {
   return (
-    <section className="flex min-h-[70dvh]">
+    <section
+      aria-labelledby="background-heading"
+      className="flex min-h-[70dvh]"
+    >
       <figure className="flex-1 relative flex flex-col gap-4 items-center justify-center bg-secondary">
         <Image
           src="/img/laura-healing.webp"
@@ -19,8 +22,15 @@ export default function Background() {
       </figure>
 
       <div className="flex-1 flex justify-center items-center">
-        <div className="flex flex-col gap-4 max-w-md">
-          <h2 className="font-heading font-semibold text-4xl">
+        <div
+          className="flex flex-col gap-4 max-w-md"
+          role="region"
+          aria-labelledby="background-heading"
+        >
+          <h2
+            id="background-heading"
+            className="font-heading font-semibold text-4xl"
+          >
             What is SBT Energy Therapy®?
           </h2>
 
@@ -34,7 +44,11 @@ export default function Background() {
             and fulfill your greatest potential.
           </p>
 
-          <Link href="#" className="btn--primary  max-w-fit mt-2">
+          <Link
+            href="#"
+            className="btn--primary  max-w-fit mt-2"
+            aria-label="Match with an energy healer"
+          >
             Match with an Energy Healer
           </Link>
         </div>
