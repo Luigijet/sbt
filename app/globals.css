@@ -30,6 +30,9 @@
 }
 
 @theme inline {
+  /* Breakpoint */
+  --breakpoint-xs: 375px;
+
   /* Background */
   --color-background: var(--color-bg-page);
   --color-nav: var(--color-bg-nav);

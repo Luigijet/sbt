@@ -23,12 +23,12 @@ export default function Advertise() {
         <div aria-hidden="true" className="absolute inset-0 bg-black/30" />
         <h2
           id="advertise-heading"
-          className="text-3xl md:text-4xl font-semibold font-heading text-white relative z-10"
+          className="text-2xl md:text-4xl font-semibold font-heading text-white relative z-10"
         >
           Stay in the Loop
         </h2>
 
-        <p className="text-lg leading-7 max-w-2xl text-center text-white relative z-10">
+        <p className="lg:text-lg leading-7 max-w-2xl text-center text-white relative z-10">
           Receive updates on upcoming events
         </p>
 

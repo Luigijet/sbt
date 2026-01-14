@@ -30,7 +30,7 @@ export default function HeroServer({ bgRef }: Props) {
 
       <div aria-hidden="true" className="absolute inset-0 bg-[#32302f]/70" />
 
-      <div className="relative z-10 flex flex-col items-center gap-3 px-4 text-center max-w-4xl w-full mr-95">
+      <div className="relative z-10 flex flex-col items-center gap-3 px-4 text-center lg:max-w-4xl w-full lg:mr-95">
         <Image
           src="/logo/sbt-logo.webp"
           alt="SBT Energy Therapy logo"
@@ -39,7 +39,7 @@ export default function HeroServer({ bgRef }: Props) {
         />
 
         <p
-          className="text-white text-lg tracking-widest"
+          className="text-white lg:text-lg tracking-widest"
           aria-label="Network of healers"
         >
           - NETWORK OF HEALERS™ -
@@ -47,7 +47,7 @@ export default function HeroServer({ bgRef }: Props) {
 
         <h1
           id="hero-heading"
-          className="text-white font-bold font-heading text-4xl"
+          className="text-white font-bold font-heading text-2xl lg:text-4xl"
         >
           Which Healer is Right for You?
         </h1>
@@ -57,7 +57,7 @@ export default function HeroServer({ bgRef }: Props) {
           worldwide.
         </p>
 
-        <a className="btn--primary px-8 text-lg mt-6">
+        <a className="btn--primary px-8 lg:text-lg mt-6">
           Match with an Energy Healer
         </a>
 

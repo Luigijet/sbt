@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#333130] pt-12 pb-5 px-6">
-      <div className="max-w-5xl mx-auto w-full flex gap-6">
-        <div className="flex-1 pr-8 flex flex-col justify-between">
+    <footer id="footer" className="bg-[#333130] pt-12 pb-5 px-6">
+      <div className="max-w-5xl mx-auto w-full flex flex-col-reverse lg:flex-row  gap-6">
+        <div className="flex-1 lg:pr-8 flex flex-col justify-between">
           {/* SBT ICON */}
           <Image
             src="/logo/sbt-app-logo.webp"
@@ -68,7 +68,7 @@ export default function Footer() {
             © 2023 SBT Energy Therapy®
           </span>
         </div>
-        <div className="flex-1 py-5 pl-8">
+        <div className="flex-1 py-5 lg:pl-8">
           <h2
             id="footer-contact-heading"
             className="text-2xl font-semibold font-heading text-white mb-6"

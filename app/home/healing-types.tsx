@@ -10,17 +10,17 @@ export default function HealingTypes() {
     >
       <h2
         id="healing-types-heading"
-        className="font-heading font-semibold text-4xl"
+        className="font-heading font-semibold text-2xl lg:text-4xl"
       >
         What is Your Pain Costing You?
       </h2>
 
-      <p className="text-lg leading-7 max-w-2xl">
+      <p className="lg:text-lg leading-7 max-w-2xl">
         How much more will you spend doing things the old way? It has cost many
         their relationships, jobs, hope, time, energy and more.
       </p>
 
-      <h3 className="mt-8 mb-4 text-2xl text-primary font-heading font-semibold">
+      <h3 className="mt-8 mb-4 text-xl lg:text-2xl text-primary font-heading font-semibold">
         Our Network of Healers™ helps you try something new:
       </h3>
 
@@ -45,11 +45,11 @@ export default function HealingTypes() {
                 width={160}
                 height={160}
                 sizes="(max-width: 768px) 100vw, 160px"
-                className="h-40 w-40 object-contain"
+                className="h-30 w-30 lg:h-40 lg:w-40 object-contain"
               />
               <h4
                 id={`healing-${type.title.replace(" ", "-")}`}
-                className="uppercase text-primary tracking-widest text-lg"
+                className="uppercase text-primary tracking-widest lg:text-lg"
               >
                 {type.title}
               </h4>

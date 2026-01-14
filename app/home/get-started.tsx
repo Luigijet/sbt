@@ -7,9 +7,9 @@ export default function GetStarted() {
   return (
     <section
       aria-labelledby="get-started-heading"
-      className="flex min-h-[70dvh]"
+      className="flex flex-col lg:flex-row min-h-[70dvh]"
     >
-      <figure className="flex-1 relative flex items-end justify-end">
+      <figure className="flex-1 relative flex items-center justify-center lg:items-end lg:justify-end">
         <div className="absolute inset-0">
           <Image
             src="/bg/get-started.webp"
@@ -21,14 +21,16 @@ export default function GetStarted() {
             className="object-cover w-full h-full"
           />
         </div>
-        <figcaption className="relative z-10 text-white space-y-2 py-25 px-20">
+        {/* Contrast overlay */}
+        <div aria-hidden="true" className="absolute inset-0 bg-black/30" />
+        <figcaption className="relative z-10 text-white space-y-2 py-20 px-6 lg:py-25 lg:px-20">
           <h2
             id="get-started-heading"
-            className="font-heading font-bold text-5xl"
+            className="font-heading font-bold text-3xl lg:text-5xl"
           >
             Get Started!
           </h2>
-          <p className="leading-6 text-lg max-w-sm">
+          <p className="leading-6 lg:text-lg max-w-sm">
             Our Network of Healers™ asks your subconscious the underlying cause
             of the energy imbalance you suffer from, getting to the core now –
             and ending your pain.
@@ -36,7 +38,7 @@ export default function GetStarted() {
         </figcaption>
       </figure>
 
-      <div className="flex-1 flex flex-col gap-6 justify-center items-center">
+      <div className="flex-1 flex flex-col gap-6 justify-center items-center py-20 px-6">
         <p id="get-started-desc" className="sr-only">
           Three steps to match with an energy healer.
         </p>
@@ -50,7 +52,7 @@ export default function GetStarted() {
                 loading="lazy"
                 width={80}
                 height={80}
-                className="object-cover w-20 h-20"
+                className="object-cover w-15 h-15 lg:w-20 lg:h-20"
               />
               <div className="space-y-2">
                 <h3 className="uppercase text-primary text-lg">

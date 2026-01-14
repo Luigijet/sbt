@@ -5,23 +5,26 @@ export default function Background() {
   return (
     <section
       aria-labelledby="background-heading"
-      className="flex min-h-[70dvh]"
+      className="flex flex-col lg:flex-row min-h-[70dvh]"
     >
-      <figure className="flex-1 relative flex flex-col gap-4 items-center justify-center bg-secondary">
-        <Image
-          src="/img/laura-healing.webp"
-          alt="Energy healer guiding a client during a one-on-one healing session in a calm indoor setting"
-          loading="lazy"
-          width={400}
-          height={400}
-          className="object-cover w-105 h-105 rounded-sm"
-        />
-        <Link href="#" className="btn--secondary  text-center w-105">
-          Meet Laura, Founder of the Network of Healers™
-        </Link>
+      <figure className="flex-1 relative flex justify-center bg-secondary py-20 px-6">
+        <div className="w-105 flex flex-col gap-4 items-center">
+          <Image
+            src="/img/laura-healing.webp"
+            alt="Energy healer guiding a client during a one-on-one healing session in a calm indoor setting"
+            loading="lazy"
+            width={420}
+            height={420}
+            className="w-full h-auto object-cover rounded-sm"
+          />
+
+          <Link href="#" className="btn--secondary w-full text-center">
+            Meet Laura, Founder of the Network of Healers™
+          </Link>
+        </div>
       </figure>
 
-      <div className="flex-1 flex justify-center items-center">
+      <div className="flex-1 flex justify-center items-center py-20 px-6">
         <div
           className="flex flex-col gap-4 max-w-md"
           role="region"
@@ -29,7 +32,7 @@ export default function Background() {
         >
           <h2
             id="background-heading"
-            className="font-heading font-semibold text-4xl"
+            className="font-heading font-semibold text-2xl lg:text-4xl"
           >
             What is SBT Energy Therapy®?
           </h2>

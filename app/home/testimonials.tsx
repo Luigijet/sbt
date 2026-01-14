@@ -50,21 +50,26 @@ export default function Testimonials() {
         className="max-w-3xl text-center w-full"
       >
         {/* Fade container */}
-        <div aria-live="polite" className="relative min-h-55">
+        <div
+          aria-live="polite"
+          className="relative min-h-100 xs:min-h-70 sm:min-h-70 md:min-h-60 lg:min-h-55"
+        >
           {TESTIMONIALS.map((item, i) => (
             <article
               key={i}
               aria-hidden={i !== index}
               aria-roledescription="slide"
               aria-label={`Testimonial ${i + 1} of ${total}`}
-              className={`absolute inset-0 px-6 transition-opacity duration-700 ease-in-out ${
+              className={`absolute inset-0 lg:px-6 transition-opacity duration-700 ease-in-out ${
                 index === i
                   ? "opacity-100 pointer-events-auto"
                   : "opacity-0 pointer-events-none"
               }`}
             >
               <blockquote className="p-6">
-                <p className="italic text-lg leading-relaxed">“{item.quote}”</p>
+                <p className="italic lg:text-lg leading-relaxed">
+                  “{item.quote}”
+                </p>
                 <footer className="mt-4 font-medium font-heading">
                   — {item.author}
                 </footer>
