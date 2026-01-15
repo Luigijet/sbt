@@ -9,6 +9,7 @@ import Background from "./home/background";
 import Healers from "./home/healers";
 import Retreats from "./home/retreats";
 import Advertise from "./home/advertise";
+import FadeInSection from "./components/ui/fade-in-section";
 
 export default function HomePage() {
   return (
@@ -44,14 +45,37 @@ export default function HomePage() {
         }}
       />
 
-      <HeroClient />
-      <HealingTypes />
-      <GetStarted />
-      <Testimonials />
-      <Background />
-      <Healers />
-      <Retreats />
-      <Advertise />
+      <FadeInSection>
+        <HeroClient />
+      </FadeInSection>
+
+      <FadeInSection>
+        <HealingTypes />
+      </FadeInSection>
+
+      <FadeInSection>
+        <GetStarted />
+      </FadeInSection>
+
+      <FadeInSection>
+        <Testimonials />
+      </FadeInSection>
+
+      <FadeInSection>
+        <Background />
+      </FadeInSection>
+
+      <FadeInSection>
+        <Healers />
+      </FadeInSection>
+
+      <FadeInSection>
+        <Retreats />
+      </FadeInSection>
+
+      <FadeInSection>
+        <Advertise />
+      </FadeInSection>
     </>
   );
 }

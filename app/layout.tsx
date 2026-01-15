@@ -85,6 +85,7 @@ export default function RootLayout({
         />
         <Nav />
         <main className="mt-20">{children}</main>
+
         <Footer />
       </body>
     </html>
