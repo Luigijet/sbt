@@ -1,5 +1,3 @@
-import Script from "next/script";
-
 import HealingTypes from "./home/healing-types";
 import { HEALING_TYPES } from "./data/static-data";
 import HeroClient from "./home/hero-client";
@@ -14,24 +12,29 @@ import FadeInSection from "./components/ui/fade-in-section";
 export default function HomePage() {
   return (
     <>
-      <Script
-        id="service-jsonld"
+      {/* Service schema */}
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
             name: "SBT Energy Therapy Healing Sessions",
-            provider: {
-              "@type": "Organization",
-              name: "SBT Energy Therapy",
-            },
             description:
               "Certified energy healing sessions focused on physical, emotional, and spiritual wellbeing.",
-            areaServed: "Worldwide",
             serviceType: "Energy Healing Therapy",
+            areaServed: {
+              "@type": "AdministrativeArea",
+              name: "Worldwide",
+            },
+            provider: {
+              "@type": "ProfessionalService",
+              name: "SBT Energy Therapy",
+              url: "https://sbthealer.netlify.app",
+            },
             hasOfferCatalog: {
               "@type": "OfferCatalog",
+              name: "Healing Services",
               itemListElement: HEALING_TYPES.map((t) => ({
                 "@type": "Offer",
                 itemOffered: {

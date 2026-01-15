@@ -50,6 +50,8 @@ export async function generateMetadata({
   };
 }
 
+const SITE_URL = "https://sbthealer.netlify.app";
+
 export default async function HealerProfilePage({ params }: PageProps) {
   const { healer } = await params;
 
@@ -61,14 +63,16 @@ export default async function HealerProfilePage({ params }: PageProps) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": `${SITE_URL}/our-healers/${healer}#person`,
     name: healerData.name,
     jobTitle: healerData.specialty,
     description: healerData.description,
-    url: `https://www.sbtenergytherapy.com/our-healers/${healer}`,
+    url: `${SITE_URL}/our-healers/${healer}`,
     worksFor: {
-      "@type": "Organization",
+      "@type": "ProfessionalService",
+      "@id": `${SITE_URL}#business`,
       name: "SBT Energy Therapy",
-      url: "https://www.sbtenergytherapy.com",
+      url: SITE_URL,
     },
   };
 

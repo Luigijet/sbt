@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 
 import "./globals.css";
 import { futuraLT } from "./fonts/futura";
@@ -68,11 +67,9 @@ export default function RootLayout({
       className={`${futuraLT.variable} ${cormorant.variable} ${avenirLT.variable}`}
     >
       <body className="overflow-x-hidden">
-        {/* Organization JSON-LD */}
-        <Script
-          id="organization-jsonld"
+        {/* Organization schema */}
+        <script
           type="application/ld+json"
-          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -83,6 +80,33 @@ export default function RootLayout({
             }),
           }}
         />
+
+        {/* ProfessionalService (LocalBusiness subtype – online sessions) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              name: "SBT Energy Therapy",
+              url: "https://sbthealer.netlify.app",
+              image: "https://sbthealer.netlify.app/logo/sbt-app-logo.webp",
+              priceRange: "$$",
+              areaServed: {
+                "@type": "AdministrativeArea",
+                name: "Worldwide",
+              },
+              availableChannel: {
+                "@type": "ServiceChannel",
+                serviceLocation: {
+                  "@type": "VirtualLocation",
+                  url: "https://sbthealer.netlify.app",
+                },
+              },
+            }),
+          }}
+        />
+
         <Nav />
         <main className="mt-20">{children}</main>
 
