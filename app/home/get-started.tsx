@@ -47,7 +47,7 @@ export default function GetStarted() {
             <li key={idx} className="flex gap-4">
               <Image
                 src={item.img}
-                alt=""
+                alt={item.title}
                 aria-hidden="true"
                 loading="lazy"
                 width={80}

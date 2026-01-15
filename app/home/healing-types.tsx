@@ -40,7 +40,7 @@ export default function HealingTypes() {
             >
               <Image
                 src={`/icon/${type.title.replace(" ", "-")}.webp`}
-                alt=""
+                alt={type.title}
                 aria-hidden="true"
                 width={160}
                 height={160}

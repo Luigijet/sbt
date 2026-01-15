@@ -25,7 +25,7 @@ export default function Testimonials() {
     >
       <Image
         src="/logo/sbt-black.webp"
-        alt=""
+        alt="SBT Energy Healing Black Logo"
         aria-hidden="true"
         width={80}
         height={80}
