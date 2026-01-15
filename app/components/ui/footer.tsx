@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import FadeInSection from "./fade-in-section";
 
 export default function Footer() {
