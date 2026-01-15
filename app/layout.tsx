@@ -66,47 +66,42 @@ export default function RootLayout({
       lang="en"
       className={`${futuraLT.variable} ${cormorant.variable} ${avenirLT.variable}`}
     >
-      <body className="overflow-x-hidden">
-        {/* Organization schema */}
+      <head>
+        {/* ORGANIZATION + WEBSITE (defined ONCE) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "SBT Energy Therapy",
-              url: "https://sbthealer.netlify.app",
-              logo: "https://sbthealer.netlify.app/logo/sbt-app-logo.webp",
-            }),
-          }}
-        />
-
-        {/* ProfessionalService (LocalBusiness subtype – online sessions) */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "ProfessionalService",
-              name: "SBT Energy Therapy",
-              url: "https://sbthealer.netlify.app",
-              image: "https://sbthealer.netlify.app/logo/sbt-app-logo.webp",
-              priceRange: "$$",
-              areaServed: {
-                "@type": "AdministrativeArea",
-                name: "Worldwide",
-              },
-              availableChannel: {
-                "@type": "ServiceChannel",
-                serviceLocation: {
-                  "@type": "VirtualLocation",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://sbthealer.netlify.app/#organization",
+                  name: "SBT Energy Therapy",
                   url: "https://sbthealer.netlify.app",
+                  logo: "https://sbthealer.netlify.app/logo/sbt-app-logo.webp",
+                  sameAs: [
+                    "https://www.instagram.com/energytherapyllc/",
+                    "https://www.youtube.com/channel/UCqIePar-bOCSzjUlSRvES6Q",
+                    "https://www.facebook.com/EnergyTherapybyLaura/",
+                  ],
                 },
-              },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://sbthealer.netlify.app/#website",
+                  url: "https://sbthealer.netlify.app",
+                  name: "SBT Energy Therapy",
+                  inLanguage: "en",
+                  publisher: {
+                    "@id": "https://sbthealer.netlify.app/#organization",
+                  },
+                },
+              ],
             }),
           }}
         />
-
+      </head>
+      <body className="overflow-x-hidden">
         <Nav />
         <main className="mt-20">{children}</main>
 

@@ -1,5 +1,5 @@
 import HealingTypes from "./home/healing-types";
-import { HEALING_TYPES } from "./data/static-data";
+import { HEALERS, HEALING_TYPES } from "./data/static-data";
 import HeroClient from "./home/hero-client";
 import GetStarted from "./home/get-started";
 import Testimonials from "./home/testimonials";
@@ -28,9 +28,11 @@ export default function HomePage() {
               name: "Worldwide",
             },
             provider: {
-              "@type": "ProfessionalService",
-              name: "SBT Energy Therapy",
-              url: "https://sbthealer.netlify.app",
+              "@id": "https://sbthealer.netlify.app/#organization",
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": "https://sbthealer.netlify.app/#homepage",
             },
             hasOfferCatalog: {
               "@type": "OfferCatalog",
@@ -44,6 +46,35 @@ export default function HomePage() {
                 },
               })),
             },
+          }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: "Network of Healers",
+            itemListElement: HEALERS.map((healer, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              item: {
+                "@type": "Person",
+                name: healer.name,
+                description: healer.desc.trim().slice(0, 500),
+                image: `https://sbthealer.netlify.app${healer.img}`,
+                affiliation: {
+                  "@id": "https://sbthealer.netlify.app/#organization",
+                },
+                hasOccupation: {
+                  "@type": "Occupation",
+                  name: healer.group,
+                },
+                knowsAbout: healer.specialties,
+              },
+            })),
           }),
         }}
       />

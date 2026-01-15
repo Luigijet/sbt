@@ -38,10 +38,7 @@ export default function HeroServer({ bgRef }: Props) {
           height={200}
         />
 
-        <p
-          className="text-white lg:text-lg tracking-widest"
-          aria-label="Network of healers"
-        >
+        <p className="text-white lg:text-lg tracking-widest">
           - NETWORK OF HEALERS™ -
         </p>
 

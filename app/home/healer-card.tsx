@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useState } from "react";
 
+import slugifyId from "../utils/slugify";
+
 type HealerCardProps = {
   healer: {
     name: string;
@@ -15,34 +17,37 @@ type HealerCardProps = {
 export default function HealerCard({ healer }: HealerCardProps) {
   const [expanded, setExpanded] = useState(false);
 
+  const healerId = `healer-${slugifyId(healer.name)}`;
+  const descId = `healer-desc-${slugifyId(healer.name)}`;
+
   return (
     <li>
       <article
-        aria-labelledby={`healer-${healer.name}`}
+        aria-labelledby={healerId}
         className="group h-full flex flex-col bg-white border border-transparent rounded-lg overflow-hidden hover:border-primary shadow-md transition-all duration-300"
       >
         <Image
           src={healer.img}
-          alt="Portrait of Laura, energy healing practitioner"
+          alt={`Portrait of ${healer.name}, energy healing practitioner`}
           loading="lazy"
           width={200}
           height={200}
-          className="h-45 w-full object-cover"
+          className="h-40 w-full object-cover"
         />
 
-        <div className="flex-1 flex flex-col p-5 md:p-6">
+        <div className="flex-1 flex flex-col p-4">
           <h3
-            id={`healer-${healer.name}`}
-            className="text-lg font-semibold mb-1 text-primary"
+            id={`healer-${slugifyId(healer.name)}`}
+            className="text-lg font-medium text-primary"
           >
             {healer.name}
           </h3>
 
-          <p className="text-sm font-medium mb-4">{healer.group}</p>
+          <p className="text-xs font-medium mb-4">{healer.group}</p>
 
-          <div className="flex-1 mb-4">
+          <div className="flex-1 mb-2">
             <div
-              id={`healer-desc-${healer.name}`}
+              id={descId}
               className={`text-sm text-muted-foreground leading-relaxed space-y-4 transition-all duration-300 ${
                 expanded ? "" : "line-clamp-3"
               }`}

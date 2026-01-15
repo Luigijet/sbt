@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { HEALING_TYPES } from "../data/static-data";
+import slugifyId from "../utils/slugify";
 
 export default function HealingTypes() {
   return (
@@ -29,17 +30,17 @@ export default function HealingTypes() {
       </p>
 
       <ul
-        aria-describedby="healing-types"
+        aria-describedby="healing-types-desc"
         className="max-w-4xl grid grid-cols-1 lg:grid-cols-3 w-full gap-10"
       >
         {HEALING_TYPES.map((type) => (
           <li key={type.title}>
             <article
-              aria-labelledby={`healing-${type.title.replace(" ", "-")}`}
+              aria-labelledby={`healing-${slugifyId(type.title)}`}
               className="flex flex-col items-center justify-center"
             >
               <Image
-                src={`/icon/${type.title.replace(" ", "-")}.webp`}
+                src={`/icon/${slugifyId(type.title)}.webp`}
                 alt={type.title}
                 aria-hidden="true"
                 width={160}
@@ -48,7 +49,7 @@ export default function HealingTypes() {
                 className="h-30 w-30 lg:h-40 lg:w-40 object-contain"
               />
               <h4
-                id={`healing-${type.title.replace(" ", "-")}`}
+                id={`healing-${slugifyId(type.title)}`}
                 className="uppercase text-primary tracking-widest lg:text-lg"
               >
                 {type.title}
