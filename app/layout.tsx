@@ -78,8 +78,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "SBT Energy Therapy",
-              url: "https://www.sbtenergytherapy.com",
-              logo: "https://www.sbtenergytherapy.com/images/logo.png",
+              url: "https://sbthealer.netlify.app",
+              logo: "https://sbthealer.netlify.app/logo/sbt-app-logo.webp",
             }),
           }}
         />
