@@ -46,7 +46,7 @@ export default function HeroServer({ bgRef }: Props) {
           id="hero-heading"
           className="text-white font-bold font-heading text-2xl lg:text-4xl"
         >
-          Which Healer is Right for You?
+          Energy Therapy Services for Holistic Healing
         </h1>
 
         <p className="sr-only">

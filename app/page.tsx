@@ -103,9 +103,7 @@ export default function HomePage() {
         <Healers />
       </FadeInSection>
 
-      <FadeInSection>
-        <Retreats />
-      </FadeInSection>
+      <Retreats />
 
       <FadeInSection>
         <Advertise />

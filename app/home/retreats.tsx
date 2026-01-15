@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import FadeInSection from "../components/ui/fade-in-section";
 
 const IMAGES = Array.from({ length: 7 }).map(() => "/img/laura-headshot.webp");
 
@@ -27,57 +28,61 @@ export default function Retreats() {
   }
 
   return (
-    <section
-      id="retreats"
-      aria-labelledby="retreats-heading"
-      className="flex flex-col gap-4 justify-center items-center py-20 px-6"
-    >
-      <h2
-        id="retreats-heading"
-        className="text-2xl md:text-4xl font-semibold font-heading"
-      >
-        Healing Retreats
-      </h2>
+    <>
+      <FadeInSection>
+        <section
+          id="retreats"
+          aria-labelledby="retreats-heading"
+          className="flex flex-col gap-4 justify-center items-center py-20 px-6"
+        >
+          <h2
+            id="retreats-heading"
+            className="text-2xl md:text-4xl font-semibold font-heading"
+          >
+            Healing Retreats
+          </h2>
 
-      <p className="lg:text-lg leading-7 max-w-2xl text-center">
-        SBT Energy Therapy® “Show Me How To Become a Healer” retreats are an
-        immersive body and soul healing experience uniquely designed for a
-        transformational journey to uncover the highest version of yourself.
-      </p>
+          <p className="lg:text-lg leading-7 max-w-2xl text-center">
+            SBT Energy Therapy® “Show Me How To Become a Healer” retreats are an
+            immersive body and soul healing experience uniquely designed for a
+            transformational journey to uncover the highest version of yourself.
+          </p>
 
-      <p id="retreats-gallery-desc" className="sr-only">
-        {" "}
-        Photo gallery from SBT Energy Therapy healing retreats.{" "}
-      </p>
+          <p id="retreats-gallery-desc" className="sr-only">
+            {" "}
+            Photo gallery from SBT Energy Therapy healing retreats.{" "}
+          </p>
 
-      <div className="w-full max-w-4xl mx-auto space-y-4 text-right">
-        <ul className="grid grid-cols-1 sm:grid-cols-7 gap-2 mt-4">
-          {IMAGES.map((src, i) => (
-            <li key={i}>
-              <button
-                type="button"
-                onClick={() => setActiveIndex(i)}
-                className="relative group w-full focus:outline-none"
-                aria-label="View retreat photo"
-              >
-                <Image
-                  src={src}
-                  alt="Healing retreat moment"
-                  width={300}
-                  height={300}
-                  className="w-full h-80 object-cover"
-                />
+          <div className="w-full max-w-4xl mx-auto space-y-4 text-right">
+            <ul className="grid grid-cols-1 sm:grid-cols-7 gap-2 mt-4">
+              {IMAGES.map((src, i) => (
+                <li key={i}>
+                  <button
+                    type="button"
+                    onClick={() => setActiveIndex(i)}
+                    className="relative group w-full focus:outline-none"
+                    aria-label="View retreat photo"
+                  >
+                    <Image
+                      src={src}
+                      alt="Healing retreat moment"
+                      width={300}
+                      height={300}
+                      className="w-full h-80 object-cover"
+                    />
 
-                <span className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </button>
-            </li>
-          ))}
-        </ul>
+                    <span className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </button>
+                </li>
+              ))}
+            </ul>
 
-        <Link href="#" className="btn--secondary">
-          Additional Photos
-        </Link>
-      </div>
+            <Link href="#" className="btn--secondary">
+              Additional Photos
+            </Link>
+          </div>
+        </section>
+      </FadeInSection>
 
       {/* Lightbox */}
       {activeIndex !== null && (
@@ -148,6 +153,6 @@ export default function Retreats() {
           </button>
         </div>
       )}
-    </section>
+    </>
   );
 }

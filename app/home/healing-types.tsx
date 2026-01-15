@@ -22,7 +22,7 @@ export default function HealingTypes() {
       </p>
 
       <h3 className="mt-8 mb-4 text-xl lg:text-2xl text-primary font-heading font-semibold">
-        Our Network of Healers™ helps you try something new:
+        Our Network of Certified Energy Healers™ helps you try something new:
       </h3>
 
       <p id="healing-types-desc" className="sr-only">
@@ -54,7 +54,7 @@ export default function HealingTypes() {
               >
                 {type.title}
               </h4>
-              <p className="leading-6 text-primary mt-2 lg:mt-5">{type.desc}</p>
+              <p className="leading-6 text-primary mt-2">{type.desc}</p>
             </article>
           </li>
         ))}
