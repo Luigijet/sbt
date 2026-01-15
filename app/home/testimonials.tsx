@@ -52,7 +52,7 @@ export default function Testimonials() {
         {/* Fade container */}
         <div
           aria-live="polite"
-          className="relative min-h-100 xs:min-h-70 sm:min-h-70 md:min-h-60 lg:min-h-55"
+          className="relative min-h-120 xs:min-h-85 sm:min-h-70 md:min-h-60 lg:min-h-55"
         >
           {TESTIMONIALS.map((item, i) => (
             <article
@@ -87,7 +87,7 @@ export default function Testimonials() {
               onClick={() => setIndex(i)}
               aria-label={`Go to testimonial ${i + 1}`}
               aria-current={index === i}
-              className={`w-1.5 h-1.5 rounded-full transition border-2  ${
+              className={`w-2 h-2 lg:w-1.5 lg:h-1.5 rounded-full transition border-2  ${
                 index === i
                   ? "bg-white border-foreground"
                   : "bg-foreground border-transparent "

@@ -53,7 +53,7 @@ export default function HealingTypes() {
               >
                 {type.title}
               </h4>
-              <p className="leading-6 text-primary mt-5">{type.desc}</p>
+              <p className="leading-6 text-primary mt-2 lg:mt-5">{type.desc}</p>
             </article>
           </li>
         ))}

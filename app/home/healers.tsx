@@ -22,7 +22,7 @@ export default function Healers() {
         biography that can be expanded.
       </p>
 
-      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mt-12">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mt-4 lg:mt-12">
         {Array.from({ length: 8 }).map((_, i) => {
           const healer = HEALERS[i % HEALERS.length];
           return <HealerCard key={`${healer.name}-${i}`} healer={healer} />;
